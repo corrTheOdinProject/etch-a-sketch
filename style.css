@@ -1,0 +1,182 @@
+html {
+    font-size: 62.5%;
+}
+/* Color Palette: https://coolors.co/f72c25-cecece-fbff12-0b3954-335c67 */
+
+/* 1. General and Overall Positioning */
+
+.frame {
+    background-color: rgb(247, 44, 37);
+    width: 80rem;
+    height: 80rem; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 2rem;
+}
+
+body {
+    background-color: rgb(11, 57, 84)
+}
+
+.title {
+    text-align: center;
+    display: block;
+    font-family: "Lobster", cursive;
+    font-size: 4.5rem;
+    color: #FBFF12;
+    margin-top: 2.75rem;
+    margin-bottom: 2.75rem;
+}
+
+.container {
+    width: 60rem;
+    height: 60rem;
+    border-radius: 1.5rem;
+    background-color: RGB(255,255,255);
+    margin-left: 10rem;
+    vertical-align: middle;
+}
+
+.size-slider {
+    vertical-align: middle;
+    transform-origin: 0 50%;
+    transform: translate(0, 10rem) rotate(-90deg); 
+}
+
+.size-control {
+    display: inline-block;
+    width: 1rem;
+    margin-left: 4.5rem;
+     
+}
+.options {
+    margin-top: 2.75rem;
+    text-align: center;
+}
+
+
+/* 2. Control Details */
+:focus {
+    outline: none;
+}
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    }
+
+.options button {
+    border-radius: 0.5rem / 0.3rem;
+    width: 10rem;
+    height: 3.5rem;
+    border: none;
+    background-color: #335C67;
+    color: white;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 0 1.2rem 0 1.2rem;
+    transition: transform 0.05s, background-color 0.05s;
+}
+
+.modes-label {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 1.2rem;
+}
+
+.options button:active {
+    transform: scale(0.98);
+    background-color: #558896;
+}
+
+.size-slider {
+    display: inline-block;
+    width: 20rem;
+}
+
+/* reset basic appearance of range inputs */
+input[type="range"] {
+    -webkit-appearance: none;
+    background: transparent;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+
+
+/* style the slider's thumb */
+
+.size-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background: #FBFF12;
+    cursor: pointer;
+    margin-top: -0.80rem;
+}
+
+.size-slider::-moz-range-thumb {
+    border: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background: #FBFF12;
+    cursor: pointer;
+}
+
+
+
+/* styling the track */
+
+.size-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1rem;
+    cursor: pointer;
+    background: #335C67;
+    border-radius: 0.5rem / 50%;
+    transition: background-color 0.1s;
+
+}
+
+.size-slider:active::-webkit-slider-runnable-track  {
+    background: #558896;
+
+}
+
+.size-slider::-moz-range-track {
+    width: 100%;
+    height: 1rem;
+    cursor: pointer;
+    background: #335C67;
+    border-radius: 0.5rem / 50%;
+    transition: background-color 0.1s;
+}
+.size-slider:active::-moz-range-track {
+    background: #558896;
+
+}
+
+/* 3. Drawing Board */
+
+.container {
+    display: inline-grid;
+    grid-template-columns: repeat(16,1fr);
+    grid-auto-rows: 1fr;
+    align-content: stretch;
+    justify-content: stretch;
+    overflow:hidden;
+}
+.drawing-div {
+    box-sizing: border-box;
+    transition: background-color 0.15s;
+}
